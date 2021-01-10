@@ -32,3 +32,7 @@
 <br>
 
 5. Typy zmiennych oraz nazewnictwo
+
+> INT (integer) <br>
+> FLOAT (zmiennoprzecinkowe) 4.3 <br>
+>STRING (ciąg znaków) "tu wpisuję"
