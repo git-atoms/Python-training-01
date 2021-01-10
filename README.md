@@ -39,14 +39,24 @@
 > BOOL
 
 ```python
-Bool = True / False
+bool = True / False
 ```
 
 > Python jest CS (Case Sensitive) np.
 
 ```python
 a = 5
-
 A = 4
+
+# i to są DWIE RÓŻNE zmienne.
 ```
-> i to są DWIE RÓŻNE zmienne.
+
+<br>
+
+6. Operatory arytmetyczne (Matematyka w Pythonie)
+
+```python
+# Po podzieleniu liczb całkowitych (INT) wynik podawany jest we FLOAT
+2/2
+1.0
+```
