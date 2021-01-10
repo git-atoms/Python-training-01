@@ -28,3 +28,7 @@
 ```Python
 # komentarz w Pythonie
 ```
+
+<br>
+
+5. Typy zmiennych oraz nazewnictwo
