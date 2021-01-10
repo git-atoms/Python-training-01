@@ -14,3 +14,4 @@
 1. Co zrobić by wyciągnąć z kursu jak najwięcej korzyści?
 2. Czym jest Python? Pierwsze uruchomienie
 3. Zmienne, pierwszy skrypt oraz zmiana stanu powłoki
+4. Komentarze
