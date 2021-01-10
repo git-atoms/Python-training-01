@@ -25,7 +25,7 @@
 > CTRL / <br>
 > to skrót do komentowania
 
-```Python
+```python
 # komentarz w Pythonie
 ```
 
@@ -35,4 +35,18 @@
 
 > INT (integer) <br>
 > FLOAT (zmiennoprzecinkowe) 4.3 <br>
->STRING (ciąg znaków) "tu wpisuję"
+> STRING (ciąg znaków) "tu wpisuję swój string" <br>
+> BOOL
+
+```python
+Bool = True / False
+```
+
+> Python jest CS (Case Sensitive) np.
+
+```python
+a = 5
+
+A = 4
+```
+> i to są DWIE RÓŻNE zmienne.
