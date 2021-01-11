@@ -60,3 +60,7 @@ A = 4
 2/2
 1.0
 ```
+
+<br>
+
+7. Ćwiczenie z VAT'em
