@@ -8,11 +8,16 @@ b = 3
 print(a+b)
 '''
 
-VAT = 19
+#VAT = input("Podaj stawkę VAT ")
+VAT = float(input("Podaj stawkę VAT "))
+
+# VAT = 19
+obliczonyVAT = (1 + VAT/100)
+
 cenaNettoJava = 11
 cenaNettoAjax = 19
 
-cenaBruttoJava = cenaNettoJava * (1 + VAT/100)
-cenaBruttoAjax = cenaNettoAjax * (1 + VAT/100)
+cenaBruttoJava = cenaNettoJava * obliczonyVAT
+cenaBruttoAjax = cenaNettoAjax * obliczonyVAT
 
-print(cenaBruttoAjax)
+print("Cena brutto: ", (cenaBruttoAjax))
