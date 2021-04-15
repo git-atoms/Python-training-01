@@ -64,3 +64,7 @@ A = 4
 <br>
 
 7. Ćwiczenie z VAT'em
+8. Czym jest średnik i ENTER dla interpretera? Przypisywanie kilku wartości naraz.
+
+
+9. Ćwiczenie z VAT'em
