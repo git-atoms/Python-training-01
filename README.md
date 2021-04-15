@@ -63,7 +63,31 @@ A = 4
 
 <br>
 
-7. Ćwiczenie z VAT'em
+7. Ćwiczenie z VAT'em<br>
+
+<br>
+
+```python
+cenaNetto = float(input("Podaj cenę netto: "))
+VAT = float(input("Podaj stawkę VAT: "))
+
+obliczonyVAT = (1 + VAT/100)
+cenaBrutto = cenaNetto * obliczonyVAT
+
+print("Cena brutto: ", (cenaBrutto))
+```
+
+<br>
+
+A link do screena z ćwiczenia [tutaj](https://github.com/git-atoms/Python-training-01/blob/master/Screeny/VAT%20exercises.jpg).
+
+<br>
+
+<br>
+<br>
+
+
+
 8. Czym jest średnik i ENTER dla interpretera? Przypisywanie kilku wartości naraz.
 
 
