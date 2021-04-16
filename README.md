@@ -90,5 +90,34 @@ A link do screena z ćwiczenia [tutaj](https://github.com/git-atoms/Python-train
 
 8. Czym jest średnik i ENTER dla interpretera? Przypisywanie kilku wartości naraz.
 
+<br>
+Można przypisać zmiennym różne wartości, np.:
+
+
+```python
+x = 4
+y = 5
+z = 7
+print(x) # wyświetli wartość 4
+
+```
+<br>
+
+A co jeśli x, y, z mają te same wartości?<br>
+
+Można oczywiście napisać:<br>
+x = 4<br>
+y = 4<br>
+z = 4
+
+<br>
+
+Ale można też napisać:<br>
+x = y = z = 4<br>
+
+<br>
+<br>
+
+
 
 9. Ćwiczenie z VAT'em
