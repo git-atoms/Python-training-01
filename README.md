@@ -120,4 +120,13 @@ x = y = z = 4<br>
 
 
 
-9. Ćwiczenie z VAT'em
+9. Operatory przypisania
+
+
+<br>
+<br>
+
+
+
+10. Ćwiczenie z VAT'em
+11. Ćwiczenie z VAT'em
