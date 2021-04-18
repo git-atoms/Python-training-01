@@ -124,9 +124,31 @@ x = y = z = 4<br>
 
 
 <br>
+
+>Jeżeli do np.<br>
+>x = 4 <br>
+> chcemy dodać jeszcze 3, to można to zapisać tak:<br>
+> x += 3
+>czyli do tego co było wcześniej, dodajemy jeszcze 3.
+
+<br>
+
+>Inne operatory:<br>
+>x += 5 <br>
+>x -= 5 <br>
+>x *= 5 <br>
+>x /= 5 <br>
+>x %= 5 (modulo)<br>
+>x //= 5 (dzielenie w dół)<br>
+>x **= 5 (potęgowanie)<br>
+><br>
+
+
+
+<br>
 <br>
 
 
 
-10. Ćwiczenie z VAT'em
+10. Stringi (ciągi znaków)
 11. Ćwiczenie z VAT'em
