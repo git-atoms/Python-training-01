@@ -201,15 +201,25 @@ print(fullName)
 
 String wieloliniowy z kolei zapisujemy na dwa sposoby:<br>
 
+* Za pomocą backslash'a
+<br>
+
 ```python
-longString = "lorem ipsum"
+longString = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam\
+voluptate sapiente aperiam et cumque a ducimus, laudantium ipsum velit? Sint,\
+nobis repellendus! Hic ipsam adipisci, amet iure repellendus quaerat veritatis!"
 
 ```
 
+<br>
+
+>albo za pomocą potrójnego cudzysłowia (jak długi komentarz):
 
 
 ```python
-
+longString = """Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+voluptate sapiente aperiam et cumque a ducimus, laudantium ipsum velit? Sint,
+nobis repellendus! Hic ipsam adipisci, amet iure repellendus quaerat veritatis!"""
 
 ``` 
 
@@ -217,6 +227,8 @@ longString = "lorem ipsum"
 <br>
 <br>
 
-11. Ćwiczenie z VAT'em
+11. Ćwiczenie z VAT'e
+
+
 
 
