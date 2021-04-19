@@ -125,7 +125,7 @@ x = y = z = 4<br>
 
 
 
-9. Operatory przypisania
+## 9. Operatory przypisania
 
 
 <br>
@@ -153,7 +153,7 @@ x = y = z = 4<br>
 <br>
 
 
-10. Stringi (ciągi znaków)
+## 10. Stringi (ciągi znaków)
 <br>
 >Jeśli chcemy wyświetlić string, robimy to komendą PRINT
 <br>
