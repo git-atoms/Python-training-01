@@ -223,6 +223,14 @@ nobis repellendus! Hic ipsam adipisci, amet iure repellendus quaerat veritatis!"
 
 ``` 
 
+<br>
+
+>Pobieranie miejsca w stringu.<br>
+
+Pierwszym elementem jest element 0
+<br>
+Ostatnim jest element -1 (możemy go pobrać bez znania długości stringu).
+
 
 <br>
 <br>
