@@ -196,8 +196,27 @@ print(fullName)
 
 ```
 
+<br>
+<br>
+
+String wieloliniowy z kolei zapisujemy na dwa sposoby:<br>
+
+```python
+longString = "lorem ipsum"
+
+```
+
+
+
+```python
+
+
+``` 
+
 
 <br>
 <br>
 
 11. Ćwiczenie z VAT'em
+
+
