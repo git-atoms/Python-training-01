@@ -176,6 +176,23 @@ print(imie + " " + nazwisko)
 ```
 
 <br>
+
+
+>Ale można to takie dane przechować w tylko jednej zmiennej:
+<br>
+
+```python
+
+imie = "Jan"
+nazwisko = "Kowalski"
+
+fullName = imie + " " + nazwisko
+print(fullName)
+
+```
+
+
+<br>
 <br>
 
 11. Ćwiczenie z VAT'em
