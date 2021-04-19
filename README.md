@@ -144,11 +144,26 @@ x = y = z = 4<br>
 ><br>
 
 
-
 <br>
 <br>
-
 
 
 10. Stringi (ciągi znaków)
+<br>
+>Jeśli chcemy wyświetlić string, robimy to komendą PRINT
+<br>
+
+```python
+
+imie = "Jan"
+mazwisko = "Kowalski"
+
+print(imie)
+
+
+```
+
+<br>
+<br>
+
 11. Ćwiczenie z VAT'em
