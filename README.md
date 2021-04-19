@@ -20,7 +20,7 @@
 
 <br>
 
-4. Komentarze
+## 4. Komentarze
 
 > CTRL / <br>
 > to skrót do komentowania
@@ -31,7 +31,7 @@
 
 <br>
 
-5. Typy zmiennych oraz nazewnictwo
+## 5. Typy zmiennych oraz nazewnictwo
 
 > INT (integer) <br>
 > FLOAT (zmiennoprzecinkowe) 4.3 <br>
@@ -53,7 +53,7 @@ A = 4
 
 <br>
 
-6. Operatory arytmetyczne (Matematyka w Pythonie)
+## 6. Operatory arytmetyczne (Matematyka w Pythonie)
 
 ```python
 # Po podzieleniu liczb całkowitych (INT) wynik podawany jest we FLOAT
@@ -63,7 +63,7 @@ A = 4
 
 <br>
 
-7. Ćwiczenie z VAT'em<br>
+## 7. Ćwiczenie z VAT'em<br>
 
 <br>
 
@@ -88,7 +88,12 @@ A link do screena z ćwiczenia [tutaj](https://github.com/git-atoms/Python-train
 
 
 
-8. Czym jest średnik i ENTER dla interpretera? Przypisywanie kilku wartości naraz.
+## 8. Czym jest średnik i ENTER dla interpretera? Przypisywanie kilku wartości naraz.
+
+<br>
+
+> ENTER to dla Pythona koniec instrukcji. Nową linię będzie chciał wykonywać od nowa, a nie jako kontynuację poprzedniej.
+
 
 <br>
 Można przypisać zmiennym różne wartości, np.:
