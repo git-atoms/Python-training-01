@@ -164,6 +164,18 @@ print(imie)
 ```
 
 <br>
+
+>Natomiast jeśli chcemy połączyć dwa stringi (imię z nazwiskiem), robimy to operatorem "+". <br>
+
+```python
+imie = "Jan"
+mazwisko = "Kowalski"
+
+print(imie + " " + nazwisko)
+
+```
+
+<br>
 <br>
 
 11. Ćwiczenie z VAT'em
