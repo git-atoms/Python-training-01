@@ -231,6 +231,20 @@ Pierwszym elementem jest element [0].
 <br>
 Ostatnim jest element [-1] (możemy go pobrać bez znania długości stringu). Przedostatnim [-2], itd.
 
+```python
+imie = Tomek
+print(imie[:-1])
+
+```
+
+
+Sam zresztą zobacz [tutaj](https://github.com/git-atoms/Python-training-01/blob/master/Screeny/Miejsca%20znak%C3%B3w.jpg).
+
+<br>
+Natomaist jeśli chciałbym pokazać resztę stringu bez pierwszego znaku to roib
+
+
+
 
 <br>
 <br>
