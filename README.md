@@ -229,12 +229,15 @@ nobis repellendus! Hic ipsam adipisci, amet iure repellendus quaerat veritatis!"
 
 Pierwszym elementem jest element [0].
 <br>
-Ostatnim jest element [:-1] (możemy go pobrać bez znania długości stringu). Przedostatnim [:-2], itd.
+Ostatnim jest element [-1] (możemy go pobrać bez znania długości stringu). Przedostatnim [-2], itd.
 
 ```python
 imie = "Tomek"
-print(imie[:-1])
+print(imie[-1])
+# To wyświetla mi tylko ostatnią literę, bez względu na długość stringu
 
+print(imie[:-1])
+# To wyświetla cały string aż do ostatniego znaku (którego nie wyświetla)
 ```
 
 
@@ -246,7 +249,7 @@ Natomaist jeśli chciałbym pokazać resztę stringu bez pierwszego znaku to rob
 ```python
 imie = "Tomek"
 print(imie[1:])
-
+# To wyświetla mi wszystko od drugiej (pierwsza to zero)
 ```
 
 
