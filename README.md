@@ -234,9 +234,11 @@ Ostatnim jest element [-1] (możemy go pobrać bez znania długości stringu). P
 ```python
 imie = "Tomek"
 print(imie[-1])
+k
 # To wyświetla mi tylko ostatnią literę, bez względu na długość stringu
 
 print(imie[:-1])
+Tome
 # To wyświetla cały string aż do ostatniego znaku (którego nie wyświetla)
 ```
 
@@ -249,6 +251,7 @@ Natomaist jeśli chciałbym pokazać resztę stringu bez pierwszego znaku to rob
 ```python
 imie = "Tomek"
 print(imie[1:])
+omek
 # To wyświetla mi wszystko od drugiej (pierwsza to zero)
 ```
 
