@@ -232,7 +232,7 @@ Pierwszym elementem jest element [0].
 Ostatnim jest element [:-1] (możemy go pobrać bez znania długości stringu). Przedostatnim [:-2], itd.
 
 ```python
-imie = Tomek
+imie = "Tomek"
 print(imie[:-1])
 
 ```
@@ -244,7 +244,7 @@ Sam zresztą zobacz [tutaj](https://github.com/git-atoms/Python-training-01/blob
 Natomaist jeśli chciałbym pokazać resztę stringu bez pierwszego znaku to robię tak:
 
 ```python
-imie = Tomek
+imie = "Tomek"
 print(imie[1:])
 
 ```
