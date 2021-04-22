@@ -7,7 +7,7 @@
 
 <br>
 
-### Rozdział pierwszy: Podstawy Python
+## Rozdział pierwszy: Podstawy Python
 
 <br>
 
@@ -266,8 +266,16 @@ omek
 <br>
 <br>
 
-11. Ćwiczenie z VAT'e
 
+
+<br>
+
+## Rozdział drugi: BONUS; Skróty klawiaturowe
+
+<br>
+
+11. Najczęściej używane skróty
+12. Skróty do druku
 
 
 
