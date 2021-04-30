@@ -270,12 +270,32 @@ omek
 
 <br>
 
-## Rozdział drugi: BONUS; Skróty klawiaturowe
+## Rozdział drugi: BONUS: Skróty klawiaturowe
 
 <br>
 
 11. Najczęściej używane skróty
-12. Skróty do druku
+12. Skróty do wydrukowania dla siebie
 
+
+
+
+<br>
+
+
+
+
+<br>
+<br>
+
+
+
+<br>
+
+## Rozdział trzeci: Biblioteki i funkcje
+
+<br>
+
+13. Importowanie bibliotek
 
 
