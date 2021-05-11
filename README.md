@@ -239,7 +239,7 @@ k
 
 print(imie[:-1])
 Tome
-# To wyświetla cały string aż do ostatniego znaku (którego nie wyświetla)
+# To wyświetla cały string aż do ostatniego znaku (którego nie wyświetla bo go obcina)
 ```
 
 
@@ -256,7 +256,7 @@ omek
 <br>
 
 Sam zresztą zobacz [tutaj](https://github.com/git-atoms/Python-training-01/blob/master/Screeny/Miejsca%20znak%C3%B3w.jpg).<br>
-A [tutaj]() kolejny przykład.
+A [tutaj](https://github.com/git-atoms/Python-training-01/blob/master/Screeny/Miejsca%20znak%C3%B3w01.jpg) kolejny przykład.
 
 
 
