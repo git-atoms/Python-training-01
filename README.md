@@ -243,10 +243,8 @@ Tome
 ```
 
 
-Sam zresztą zobacz [tutaj](https://github.com/git-atoms/Python-training-01/blob/master/Screeny/Miejsca%20znak%C3%B3w.jpg).
-
 <br>
-Natomaist jeśli chciałbym pokazać resztę stringu bez pierwszego znaku to robię tak:
+Natomiast jeśli chciałbym pokazać resztę stringu bez pierwszego znaku to robię tak:
 
 ```python
 imie = "Tomek"
@@ -255,6 +253,10 @@ omek
 # To wyświetla mi wszystko od drugiej (pierwsza to zero)
 ```
 
+<br>
+
+Sam zresztą zobacz [tutaj](https://github.com/git-atoms/Python-training-01/blob/master/Screeny/Miejsca%20znak%C3%B3w.jpg).<br>
+A [tutaj]() kolejny przykład.
 
 
 
