@@ -1,5 +1,4 @@
-wiek = 28
-print(wiek)
+from math import *
 
-wiek = 29
-print(wiek)
+print(pow(2,3))
+print(sqrt(16))
