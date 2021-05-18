@@ -8,3 +8,7 @@ print(imie.upper()) #zwiększa wszystkie litery wyświetlanej funkcji (TOMEK)
 
 imie = 'TOMEK'
 print(imie.lower()) #zmniejsza wszystkie litery (tomek)
+
+
+import math
+print(math.sqrt(4))
