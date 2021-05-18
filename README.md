@@ -302,4 +302,11 @@ A [tutaj](https://github.com/git-atoms/Python-training-01/blob/master/Screeny/Mi
 
 <br>
 
-14. 
+14. Funkcja wbudowana
+
+.capitalize()
+.upper()
+.lower()
+
+
+>
