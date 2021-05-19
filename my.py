@@ -10,5 +10,16 @@ imie = 'TOMEK'
 print(imie.lower()) #zmniejsza wszystkie litery (tomek)
 
 
+#-----------------------------------------------
+
 import math
 print(math.sqrt(4))
+
+
+#-----------------------------------------------
+
+a = input() #pobiera od nas wartość ale jako string (np. jakieś słowo), a nie int/float
+
+b = input() #pobiera od nas wartość ale jako string (np. jakieś słowo), a nie int/float
+
+print(a + b) #dodało dwa stringi (np. dwa słowa)
