@@ -301,6 +301,7 @@ A [tutaj](https://github.com/git-atoms/Python-training-01/blob/master/Screeny/Mi
 13. Importowanie bibliotek
 
 <br>
+<br>
 
 14. Funkcja wbudowana
 
@@ -309,9 +310,18 @@ A [tutaj](https://github.com/git-atoms/Python-training-01/blob/master/Screeny/Mi
 .lower()<br>
 
 <br>
+<br>
 
 > [Link](https://github.com/git-atoms/Python-training-01/blob/master/my.py) do powyższych przykładów.
 >
+
+<br>
+<br>
+
+15. Pobieranie i formatowanie danych od użytkownika
+<br>
+
+>"Rzutowanie" zmiana typu danych (np. ze stringa w int)<br>
 
 <br>
 
