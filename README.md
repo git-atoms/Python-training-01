@@ -310,7 +310,6 @@ A [tutaj](https://github.com/git-atoms/Python-training-01/blob/master/Screeny/Mi
 .lower()<br>
 
 <br>
-<br>
 
 > [Link](https://github.com/git-atoms/Python-training-01/blob/master/my.py) do powyższych przykładów.
 >
