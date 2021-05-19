@@ -32,3 +32,4 @@ b = int(input()) #pobiera od nas wartość, tym razem już liczbową
 
 print(a + b) #wyświetla sumę matematyczną
 
+#-----------------------------------------------
