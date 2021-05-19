@@ -304,10 +304,11 @@ A [tutaj](https://github.com/git-atoms/Python-training-01/blob/master/Screeny/Mi
 
 14. Funkcja wbudowana
 
-.capitalize()
-.upper()
-.lower()
+.capitalize()<br>
+.upper()<br>
+.lower()<br>
 
+<br>
 
 > [Link](https://github.com/git-atoms/Python-training-01/blob/master/my.py) do powyższych przykładów.
 >
