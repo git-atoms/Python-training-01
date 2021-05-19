@@ -23,3 +23,12 @@ a = input() #pobiera od nas wartość ale jako string (np. jakieś słowo), a ni
 b = input() #pobiera od nas wartość ale jako string (np. jakieś słowo), a nie int/float
 
 print(a + b) #dodało dwa stringi (np. dwa słowa)
+
+#-----------------------------------------------
+
+
+a = int(input()) #pobiera od nas wartość, tym razem już liczbową
+b = int(input()) #pobiera od nas wartość, tym razem już liczbową
+
+print(a + b) #wyświetla sumę matematyczną
+
