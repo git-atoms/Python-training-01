@@ -1,0 +1,3 @@
+imie = "arkadiusz"
+
+print("lalala")
