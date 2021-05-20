@@ -1,3 +1,0 @@
-imie = "arkadiusz"
-
-print("lalala")
