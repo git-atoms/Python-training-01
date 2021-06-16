@@ -355,3 +355,13 @@ Operatory takie jak:
 # Wynikiem jest TRUE albo FALSE
 ```
 
+> **Uwaga**
+> Jeśli chcemy porównać, że 2 jest 2 NIE piszemy
+```python
+2 = 2  # to operator przypisania wartości
+```
+
+> ale piszemy
+```python
+2 == 2 # to jest prawidłowy operator porównania tych samych wartości
+```
