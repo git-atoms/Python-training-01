@@ -354,3 +354,4 @@ Operatory takie jak:
 
 # Wynikiem jest TRUE albo FALSE
 ```
+
