@@ -345,3 +345,12 @@ A [tutaj](https://github.com/git-atoms/Python-training-01/blob/master/Screeny/Mi
 <br>
 
 16. Operatory porównania
+
+Operatory takie jak:
+```python
+>
+<
+!=
+
+# Wynikiem jest TRUE albo FALSE
+```
