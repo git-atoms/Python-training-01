@@ -365,3 +365,5 @@ Operatory takie jak:
 ```python
 2 == 2 # to jest prawidłowy operator porównania tych samych wartości
 ```
+
+Z operatorów porównania korzystają instrukcje warunkowe.
