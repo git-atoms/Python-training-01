@@ -11,10 +11,10 @@ Poniżej bardzo dobry sposób zapisywania liczb w Pythonie
 
 
 imie = "Tomek"
-print(imie[:-1]) #obcina ostatnią
-print(imie[:1]) #obcina wszystko po pierwszej
-print(imie[0]) #pokazuje tylko pierwszą
-print(imie[-1]) #pokazuje tylko ostatnią
+print(imie[:-1]) #obcina ostatnią (Tome)
+print(imie[:1]) #obcina wszystko po pierwszej (T)
+print(imie[0]) #pokazuje tylko pierwszą (T)
+print(imie[-1]) #pokazuje tylko ostatnią (k)
 
-print(imie[0:]) #pokazuje wszystko od pierwszej
-print(imie[1:]) #pokazuje wszystko od drugiej
+print(imie[0:]) #pokazuje wszystko od pierwszej (Tomek)
+print(imie[1:]) #pokazuje wszystko od drugiej (omek)
