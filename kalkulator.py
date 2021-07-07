@@ -1,23 +1,25 @@
 print("Witaj w kalkulatorze.")
 yn = input("Czy chcesz przejść dalej? [t/n]")
 
+if (yn == 'n'):
+    exit("Do widzenia.")
+elif (yn == 't'):
+    print("No to zaczynamy!")
+
+# print("Wybierz rodzaj działania:/n")
+choice = input("'*'mnożenie '/'dzielenie '+'dodawanie '-'odejmowanie ")
+
 a = int(input("Pierwsza wartość: "))
 b = int(input("Druga wartość: "))
 
-if (yn == 't'):
-    print("No to zaczynamy!")
-    if (yn == 't'):
-        choice = input("Wybierz rodzaj działania: '*'mnożenie '/'dzielenie '+'dodawanie '-'odejmowanie ")
-        if (choice == '*'):
-            print(a*b)
-        elif (choice == '/'):
-            if (b == 0):
-                print("Nie dzielimy przez zero!")
-            else:
-                print(a/b)
-        elif (choice == '+'):
-            print(a+b)
-        elif (choice == '-'):
-            print(a-b)
-elif (yn == 'n'):
-    print("Do widzenia.")
+if (choice == '*'):
+    print(a*b)
+elif (choice == '/'):
+    if (b == 0):
+        print("Nie dzielimy przez zero!")
+    else:
+        print(a/b)
+elif (choice == '+'):
+    print(a+b)
+elif (choice == '-'):
+    print(a-b)
