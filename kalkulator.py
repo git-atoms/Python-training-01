@@ -7,11 +7,13 @@ b = int(input("Druga wartość: "))
 if (yn == 't'):
     print("No to zaczynamy!")
     if (yn == 't'):
-        choice = input("Wybierz rodzaj działania: '*'mnożenie '/'dzielenie '+'dodawanie '-'odejmowanie")
+        choice = input("Wybierz rodzaj działania: '*'mnożenie '/'dzielenie '+'dodawanie '-'odejmowanie ")
         if (choice == '*'):
             print(a*b)
         elif (choice == '/'):
             print(a/b)
+            if (b == 0):
+                print("Nie dzielimy przez zero!")
         elif (choice == '+'):
             print(a+b)
         elif (choice == '-'):
