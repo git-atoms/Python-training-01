@@ -6,7 +6,7 @@ if (yn == 'n'):
 elif (yn == 't'):
     print("No to zaczynamy!")
 
-# print("Wybierz rodzaj działania:/n")
+print("Wybierz rodzaj działania:")
 choice = input("'*'mnożenie '/'dzielenie '+'dodawanie '-'odejmowanie ")
 
 a = int(input("Pierwsza wartość: "))
