@@ -6,8 +6,8 @@ if (yn == 'n'):
 elif (yn == 't'):
     print("No to zaczynamy!")
 
-print("Wybierz rodzaj działania:")
-choice = input("'*'mnożenie '/'dzielenie '+'dodawanie '-'odejmowanie ")
+print("")
+choice = input("Wybierz rodzaj działania: \n * mnożenie\n / dzielenie\n + dodawanie\n - odejmowanie\n ")
 
 a = int(input("Pierwsza wartość: "))
 b = int(input("Druga wartość: "))
