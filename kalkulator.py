@@ -11,13 +11,13 @@ if (yn == 't'):
         if (choice == '*'):
             print(a*b)
         elif (choice == '/'):
-            print(a/b)
             if (b == 0):
                 print("Nie dzielimy przez zero!")
+            else:
+                print(a/b)
         elif (choice == '+'):
             print(a+b)
         elif (choice == '-'):
             print(a-b)
-
 elif (yn == 'n'):
     print("Do widzenia.")
