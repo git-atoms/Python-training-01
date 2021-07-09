@@ -1,5 +1,10 @@
-liczba = 0
+'''
+Warunek w instrukcji warunkowej jest wykonywany raz i już.
+W pętli, dopóki nie zostanie spełniony.
+'''
 
-while liczba <= 5:
+liczba = 100
+
+while liczba >= 0:  # liczba <= 5 to "warunek"
     print(liczba)
-    liczba += 1
+    liczba -= 1
