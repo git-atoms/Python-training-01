@@ -1,3 +1,8 @@
+'''Dodaj trzy wartości parzyste.
+W przypadku podania wartości nieparzystej, poinformuj o tym użytkownika i zapytaj poproś ponownie
+o podanie wartości parzystej.
+'''
+
 wynik = 0
 i = 0
 
