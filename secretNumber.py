@@ -8,12 +8,13 @@ zgadywanie = 0
 
 while zgadywanie != sekretnaLiczba:
     zgadywanie = int(input("Zgadnij liczbę całkowitą: "))
+
     if zgadywanie > sekretnaLiczba:
         print("Za dużo.")
         continue
-    elif zgadywanie == sekretnaLiczba:
-        print("Gratulacje, trafiona!")
-        break
-    else:
+    elif zgadywanie < sekretnaLiczba:
         print("Za mało. Próbuj dalej.")
         continue
+    else:
+        print("Gratulacje, trafiona!")
+        break
