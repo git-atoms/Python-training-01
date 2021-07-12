@@ -1,3 +1,5 @@
+# Kalkulator
+
 print("Witaj w kalkulatorze.")
 yn = input("Czy chcesz przejść dalej? [t/n]")
 
