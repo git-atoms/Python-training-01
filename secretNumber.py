@@ -3,9 +3,9 @@
 '''
 
 sekretnaLiczba = int(input("Podaj sekretną liczbę: "))
-i = 0
+zgadywanie = 0
 
-while i != sekretnaLiczba:
+while zgadywanie != sekretnaLiczba:
     zgadywanie = int(input("Zgadnij liczbę całkowitą: "))
     if zgadywanie > sekretnaLiczba:
         print("Za dużo.")
