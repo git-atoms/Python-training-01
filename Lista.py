@@ -1,0 +1,1 @@
+ imiona = ["Tomek", "Agnieszka", "Karol", "Wiktor", "Monika"]
