@@ -14,4 +14,4 @@ while i < 4:
 
 #A tu drukuje się wynik.
 #Z racji tego, że PRINT jest bez wcięcia, będzie pokazany tylko raz, na samym końcu.
-print("Wynik tego dodawania to:", wynik)
+print("Łączny wynik tego dodawania to:", wynik)
