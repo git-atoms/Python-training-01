@@ -10,6 +10,7 @@ while i < 4:
     x = int(input("Podaj wartość: "))
     wynik += x
     i +=1
+    print("Wynik tymczasowy to:", wynik)
 
 #A tu drukuje się wynik.
 #Z racji tego, że PRINT jest bez wcięcia, będzie pokazany tylko raz, na samym końcu.
