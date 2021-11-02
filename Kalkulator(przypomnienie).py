@@ -1,17 +1,25 @@
 wybor = input("1 dodawanie\n2 odejmowanie\n3 mnożenie\n4 dzielenie\n")
-a = int(input("Podaj pierwszą wartość: "))
-b = int(input("Podaj drugą wartość: "))
+if (wybor < '1' or wybor > '4'):
+    print("Wybierasz tylko to co jest w menu")
 
-if (wybor == '1'):
-    print(str(a+b))
+elif (wybor == '1'):
+    a = int(input("Podaj pierwszą wartość: "))
+    b = int(input("Podaj drugą wartość: "))
+    print(str(a + b))
 
 elif (wybor == '2'):
-    print(a-b)
+    a = int(input("Podaj pierwszą wartość: "))
+    b = int(input("Podaj drugą wartość: "))
+    print(str(a - b))
 
 elif (wybor == '3'):
-    print(str(a*b))
+    a = int(input("Podaj pierwszą wartość: "))
+    b = int(input("Podaj drugą wartość: "))
+    print(str(a * b))
 
 elif (wybor == '4'):
+    a = int(input("Podaj pierwszą wartość: "))
+    b = int(input("Podaj drugą wartość: "))
     if b!=0:
         print(str(a / b))
     else:
