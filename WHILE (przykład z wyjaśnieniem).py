@@ -1,7 +1,7 @@
 #Zaczynamy od zera bo jest neutralne przy dodawaniu.
 wynik = 0
 
-#Tu jest "mechanizm" naszej pętli.
+#Tu jest "silnik" naszej pętli.
 i = 0
 while i < 4:
 
