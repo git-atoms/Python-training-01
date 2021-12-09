@@ -1,11 +1,6 @@
-# wynik = 0
-
 x = int(input("Podaj liczbę całkowitą: "))
 
-if x != int:
-    print("Miała być liczba całkowita, a nie ułamek")
+if x >= 0:
+    print(x)
 else:
-    if x >= 0:
-        print(x)
-    else:
-        print(abs(x))
+    print(abs(x))
