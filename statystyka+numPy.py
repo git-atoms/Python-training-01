@@ -19,7 +19,7 @@ print("Mediana parzysta:", mediana_parzysta)
 
 #w numPy obliczy medianę
 x = int(input("Podaj percentyl (25,50,75): "))
-percentyl = np.percentile(zbior_parzysty, x) #np.percentile(a, q) gdzie 'a' to nasz zbiór (parzysty/nieparzysty), a 'q' to który percentyl (25,50,75)
+percentyl = np.percentile(zbior_parzysty, x) #np.percentile(a, q) gdzie 'a' to nasza lista (parzysty/nieparzysty), a 'q' to który percentyl (25,50,75)
 print("Dla percentyla", x, "wartość mediany wynosi: ", percentyl)
 """
 Przy naszym zbiorze parzystym:
@@ -28,3 +28,5 @@ Przy naszym zbiorze parzystym:
 # perc50 = mediana
 
 """
+
+
