@@ -1,3 +1,5 @@
+import os
+
 """ Oblicza silnię """
 
 silnia = 1
@@ -7,3 +9,4 @@ while i <= x:
     silnia *= i
     i += 1
 print("Silnia z", x, "to: ", silnia)
+os.system("pause")
