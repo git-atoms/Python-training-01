@@ -1,3 +1,4 @@
+print("\n AI zaczyna.")
 def printOX(plansza):
     print(plansza[1] + '|' + plansza[2] + '|' + plansza[3])
     print('-+-+-')
@@ -154,7 +155,6 @@ plansza = {1: ' ', 2: ' ', 3: ' ',
          7: ' ', 8: ' ', 9: ' '}
 
 printOX(plansza)
-print("AI zaczyna.")
 print("Pozycje do wyboru jak poniżej:")
 print("1, 2, 3 ")
 print("4, 5, 6 ")
