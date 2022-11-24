@@ -1,7 +1,6 @@
-from traceback import print_tb
 
+print("\n Witaj w kalkulatorze liczb całkowitych")
 
-print("\n Kalkulator liczb całkowitych")
 wybor = input("1 dodawanie\n2 odejmowanie\n3 mnożenie\n4 dzielenie\n")
 
 # Walidacja menu wyboru (można wybrać tylko pomiędzy 1, a 4
@@ -35,8 +34,8 @@ elif (wybor == '4'):
 # Walidacja dzielenia przez zero    
     if b!=0:
         print(str(a / b))
-    else:
-        print("Nie dzielimy przez zero")
+else:
+    print("Nie dzielimy przez zero")
 
-input("Wciśnij ENTER, żeby zakończyć")
+input("Naciśnij ENTER, żeby zakończyć")
 exit()
