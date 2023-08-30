@@ -16,7 +16,7 @@
 3. Zmienne, pierwszy skrypt oraz zmiana stanu powłoki
 
 
-> Nawet gdy skrypt zakończy już swoje działanie, to nadal możemy korzystać zdefiniowane w nim zmienne, dopóki nie zrestartujemy Shell'a ponownie.
+> Nawet gdy skrypt zakończy już swoje działanie, to nadal możemy wykorzystać zdefiniowane w nim zmienne, dopóki nie zrestartujemy Shell'a ponownie.
 
 <br>
 
