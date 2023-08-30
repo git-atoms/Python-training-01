@@ -183,7 +183,7 @@ print(imie + " " + nazwisko)
 <br>
 
 
->Ale można to takie dane przechować w tylko jednej zmiennej:
+>Ale można też takie dane przechować w tylko jednej zmiennej:
 <br>
 
 ```python
