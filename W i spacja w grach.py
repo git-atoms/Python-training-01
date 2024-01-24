@@ -1,3 +1,4 @@
+# F7 chodzenie do przodu (W), F8 skakanie (spacja)
 from pynput import keyboard
 from pynput.keyboard import Key, Controller
 
