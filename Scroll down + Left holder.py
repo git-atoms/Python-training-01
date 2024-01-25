@@ -30,7 +30,8 @@ class ScrollAndClickSimulator:
             time.sleep(0.05)  # Przerwa między akcjami
 
 def on_press(key):
-    if key == keyboard.Key.f8:
+    # if key == keyboard.Key.f8:
+    if key == keyboard.KeyCode.from_char('f'):  # Klawisz 'F' zamiast F8
         scroll_and_click_simulator.toggle_action()
 
 scroll_and_click_simulator = ScrollAndClickSimulator()
