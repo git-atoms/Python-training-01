@@ -1,3 +1,5 @@
+# Trzymanie LMB z opcją regulacji szybkości klikania
+
 from pynput import keyboard
 from pynput.mouse import Controller, Button
 import threading
