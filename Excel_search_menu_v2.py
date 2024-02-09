@@ -68,15 +68,12 @@ def main_loop():
         print("\n\nCo Tomku robimy dalej?")
         print("1. Szukamy tutaj")
         print("2. Szukamy w nowym katalogu")
-        # print("3. Kończymy szukanie")
+        choice = int(input())
 
-        choice = input()
-        if choice == '1':
+        if choice == 1:
             continue
-        elif choice == '2':
+        elif choice == 2:
             directory = input("Podaj ścieżkę do nowego katalogu: ")
-        # elif choice == '3':
-        #     break
 
 
 if __name__ == "__main__":
