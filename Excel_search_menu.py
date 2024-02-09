@@ -30,16 +30,17 @@ def search_in_directory(search_value, directory):
         print("Nie znaleziono podanej wartości.")
 
 def main_loop():
-    directory = input("Podaj ścieżkę do katalogu: ")
+    directory = input("\nPodaj ścieżkę do katalogu: ")
     while True:
-        search_value = input("Podaj szukaną wartość: ")
+        search_value = input("\nPodaj szukaną wartość: ")
         search_in_directory(search_value, directory)
 
-        print("Co Tomku robimy dalej?")
+        print("\nCo Tomku robimy dalej?")
         print("1. Szukamy nadal tutaj")
         print("2. Szukamy w nowym katalogu")
         print("3. Kończymy szukanie")
-        choice = input("Wybierz opcję (1, 2, 3): ")
+
+        choice = input()
 
         if choice == '1':
             continue
