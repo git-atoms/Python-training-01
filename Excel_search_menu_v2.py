@@ -12,6 +12,8 @@ Na koniec zadaje pytanie o następną czynność, którą ma wykonać.
 Jeśli odpowiedź będzie spoza zakresu 1-3 (takie są opcje do wyboru), zadaje pytanie ponownie, aż do otrzymania
 właściwej odpowiedzi.
 
+UWAGA: Ta ostatnia funkcjonalność nie była tu skuteczna; rozwiązuje to następna wersja (v3) tego skryptu
+
 """
 
 import os
