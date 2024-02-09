@@ -1,3 +1,19 @@
+"""
+Skrypt ma za zadanie znaleźć podaną mu wartość komórki z pliku Excel (xlsx).
+W tym celu przeszukuje wszystkie pliki o rozszerzeniu .xlsx w katalogu i zwraca jako wynik:
+
+1./ Nazwy wszystkich plików będących w tym katalogu, w których znajduje się poszukiwana przez nas wartość
+2./ Nazwę zakładki w każdym pliku
+3./ Numer komórki pierwszej odnalezionej (poszukiwanej) wartości w każdej zakładce
+4./ Ilość kolejnych wystąpień w tej samej zakładce arkusza (jeśli występuje więcej niż jedna)
+5./ Łączny czas wykonywania się skryptu
+
+Na koniec zadaje pytanie o następną czynność, którą ma wykonać.
+Jeśli odpowiedź będzie spoza zakresu 1-3 (takie są opcje do wyboru), zadaje pytanie ponownie, aż do otrzymania
+właściwej odpowiedzi.
+
+"""
+
 import os
 import openpyxl
 import platform
