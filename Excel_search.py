@@ -1,3 +1,8 @@
+# Po otrzymaniu ścieżki do katalogu, w którym znajdują się pliki Excel (xlsx), skrypt pyta o szukaną wartość
+# po czym przeszukuje wszystkie pliki, a po odnalezieniu jej pierwszego wystąpienia zatrzymuje się
+# i zwraca w odpowiedzi:
+# ścieżkę, nazwę pliku, nazwę zakładki i numer komórki, w której szukana wartość występuje
+
 import os
 import openpyxl
 import platform
