@@ -1,5 +1,6 @@
 import os
 import openpyxl
+import platform
 
 def search_in_workbook(file_path, search_value):
     workbook = openpyxl.load_workbook(file_path)
@@ -23,3 +24,9 @@ def search_in_directory(search_value, directory='.'):
 if __name__ == "__main__":
     search_value = input("Podaj szukaną wartość: ")
     search_in_directory(search_value)
+
+    # Oczekiwanie na naciśnięcie dowolnego klawisza przed zamknięciem
+    if platform.system() == 'Windows':
+        os.system('pause')  # Tylko dla Windows
+    else:
+        input("Press any button to continue...")  # Dla Unix/Linux i MacOS
