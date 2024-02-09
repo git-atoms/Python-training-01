@@ -49,7 +49,7 @@ def search_in_directory(search_value, directory):
             file_path = os.path.join(directory, file)
             results = search_in_workbook(file_path, search_value)
             for sheet, info in results.items():
-                print(f"\n{info[0]}, zakładka: {sheet}, komórka: {info[1]}")
+                print(f"\nnazwa pliku: {info[0]}\nzakładka: {sheet}\nkomórka: {info[1]}")
                 if len(info) == 3:
                     print(f"  Liczba wystąpień w zakładce: {info[2]}")
                 print()  # Dodatkowy pusty wiersz po każdym wyniku
@@ -66,7 +66,7 @@ def main_loop():
         search_in_directory(search_value, directory)
 
         print("\nCo Tomku robimy dalej?")
-        print("1. Szukamy nadal tutaj")
+        print("1. Szukamy tutaj")
         print("2. Szukamy w nowym katalogu")
         print("3. Kończymy szukanie")
 
