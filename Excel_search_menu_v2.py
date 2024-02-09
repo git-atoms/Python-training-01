@@ -49,14 +49,14 @@ def search_in_directory(search_value, directory):
             file_path = os.path.join(directory, file)
             results = search_in_workbook(file_path, search_value)
             for sheet, info in results.items():
-                print(f"\nnazwa pliku: {info[0]}\nzakładka: {sheet}\nkomórka: {info[1]}")
+                print(f"\n{info[0]}\n  Nazwa zakładki: {sheet}\n  Numer komórki: {info[1]}")
                 if len(info) == 3:
                     print(f"  Liczba wystąpień w zakładce: {info[2]}")
                 print()  # Dodatkowy pusty wiersz po każdym wyniku
                 found = True
     if not found:
         print("Nie znaleziono podanej wartości.")
-    print(f"Łączny czas wyszukiwania: {time.time() - start_time:.2f} sekund.")
+    print(f"      Łączny czas wyszukiwania: {time.time() - start_time:.2f} sekund.")
 
 
 def main_loop():
@@ -65,18 +65,18 @@ def main_loop():
         search_value = input("Podaj szukaną wartość: ")
         search_in_directory(search_value, directory)
 
-        print("\nCo Tomku robimy dalej?")
+        print("\n\nCo Tomku robimy dalej?")
         print("1. Szukamy tutaj")
         print("2. Szukamy w nowym katalogu")
-        print("3. Kończymy szukanie")
+        # print("3. Kończymy szukanie")
 
         choice = input()
         if choice == '1':
             continue
         elif choice == '2':
             directory = input("Podaj ścieżkę do nowego katalogu: ")
-        elif choice == '3':
-            break
+        # elif choice == '3':
+        #     break
 
 
 if __name__ == "__main__":
