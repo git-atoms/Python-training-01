@@ -7,3 +7,4 @@ subprocess.run("cmd /c python -m ensurepip", shell=True)
 
 # Aktualizacja pip
 subprocess.run("cmd /c python -m pip install --upgrade pip", shell=True)
+
