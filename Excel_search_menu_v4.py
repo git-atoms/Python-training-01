@@ -85,5 +85,11 @@ def main_loop():
 if __name__ == "__main__":
     main_loop()
 
-    if platform.system() != 'Windows':
+    # if platform.system() != 'Windows':
+    #     input("Press any button to continue...")  # Dla Unix/Linux i MacOS
+
+    # Oczekiwanie na naciśnięcie dowolnego klawisza przed zamknięciem
+    if platform.system() == 'Windows':
+        os.system('pause')  # Tylko dla Windows
+    else:
         input("Press any button to continue...")  # Dla Unix/Linux i MacOS
