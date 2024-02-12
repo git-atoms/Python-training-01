@@ -21,6 +21,7 @@ import openpyxl
 import platform
 import time
 
+
 def search_in_workbook(file_path, search_value):
     results = {}
     try:
@@ -42,6 +43,7 @@ def search_in_workbook(file_path, search_value):
         print(f"Wystąpił błąd przy przetwarzaniu pliku {file_path}: {e}")
     return results
 
+
 def search_in_directory(search_value, directory):
     start_time = time.time()
     found = False
@@ -52,11 +54,12 @@ def search_in_directory(search_value, directory):
                 results = search_in_workbook(file_path, search_value)
                 for sheet, infos in results.items():
                     for info in infos:
-                        print(f"\nPełna ścieżka: {info[0]}\n  Nazwa zakładki: {sheet}\n  Numer komórki: {info[1]}")
+                        print(f"\n{info[0]}\n  Nazwa zakładki: {sheet}\n  Numer komórki: {info[1]}")
                         found = True
     if not found:
         print("Nie znaleziono podanej wartości.")
     print(f"\n        Łączny czas wyszukiwania: {time.time() - start_time:.2f} sekund.")
+
 
 def menu():
     while True:
@@ -70,6 +73,7 @@ def menu():
         except ValueError:
             pass
 
+
 def main_loop():
     directory = input("Podaj ścieżkę do katalogu: ")
     while True:
@@ -81,6 +85,7 @@ def main_loop():
             continue
         elif choice == 2:
             directory = input("Podaj ścieżkę do nowego katalogu: ")
+
 
 if __name__ == "__main__":
     main_loop()
