@@ -4,69 +4,57 @@ Informuje także w swoim okienku czy dana opcja jest włączona czy wyłączona
 
 """
 
-from pynput.keyboard import Key, Listener, KeyCode
-from pynput.mouse import Button, Controller as MouseController
+from pynput import keyboard
 import threading
 import time
 
-class Clicker(threading.Thread):
-    def __init__(self):
-        super().__init__(daemon=True)
-        self.running = False
-        self.program_running = True
-        self.holding_e = False
+# Stany aktywności funkcji
+holding_e = False
+clicking_qe = False
 
-    def start_clicking(self):
-        self.running = True
+# Kontroler klawiatury
+keyboard_controller = keyboard.Controller()
 
-    def stop_clicking(self):
-        self.running = False
+def hold_e():
+    global holding_e
+    print("Hold E: ON")
+    while holding_e:
+        keyboard_controller.press('e')
+        time.sleep(0.01)  # Małe opóźnienie dla stabilności
+    keyboard_controller.release('e')
+    print("Hold E: OFF")
 
-    def start_holding_e(self):
-        self.holding_e = True
-        print("Trzymanie 'E': ON")
-
-    def stop_holding_e(self):
-        self.holding_e = False
-        print("Trzymanie 'E': OFF")
-
-    def exit(self):
-        self.stop_clicking()
-        self.stop_holding_e()
-        self.program_running = False
-
-    def run(self):
-        while self.program_running:
-            while self.running:
-                mouse.click(Button.left)
-                time.sleep(0.01)  # 100 clicks per second
-            if self.holding_e:
-                keyboard.press('e')
-            else:
-                keyboard.release('e')
-            time.sleep(0.1)
-
-mouse = MouseController()
-keyboard = Controller()
-click_thread = Clicker()
-click_thread.start()
+def click_qe():
+    global clicking_qe
+    print("Click Q+E: ON")
+    while clicking_qe:
+        keyboard_controller.press('q')
+        keyboard_controller.release('q')
+        time.sleep(0.01)  # Prędkość klikania
+        keyboard_controller.press('e')
+        keyboard_controller.release('e')
+        time.sleep(0.01)  # Prędkość klikania
+    print("Click Q+E: OFF")
 
 def on_press(key):
-    if key == KeyCode(char='['):
-        if click_thread.running:
-            click_thread.stop_clicking()
-            print("Klikanie 'Q+E': OFF")
-        else:
-            click_thread.start_clicking()
-            print("Klikanie 'Q+E': ON")
-    elif key == Key.ctrl and key == KeyCode(char='e'):
-        if click_thread.holding_e:
-            click_thread.stop_holding_e()
-        else:
-            click_thread.start_holding_e()
+    global holding_e, clicking_qe
 
-def on_release(key):
-    pass
+    # Włącz/wyłącz trzymanie klawisza 'E'
+    if key == keyboard.KeyCode.from_char('e') and keyboard_controller.ctrl_pressed:
+        if holding_e:
+            holding_e = False
+        else:
+            holding_e = True
+            threading.Thread(target=hold_e, daemon=True).start()
 
-with Listener(on_press=on_press, on_release=on_release) as listener:
+    # Włącz/wyłącz sekwencyjne naciskanie 'Q' i 'E'
+    if key == keyboard.KeyCode.from_char('['):
+        if clicking_qe:
+            clicking_qe = False
+        else:
+            clicking_qe = True
+            threading.Thread(target=click_qe, daemon=True).start()
+
+# Listener klawiszy
+with keyboard.Listener(on_press=on_press) as listener:
     listener.join()
