@@ -39,8 +39,8 @@ def click_qe():
 def on_press(key):
     global holding_e, clicking_qe
 
-    # Włącz/wyłącz trzymanie klawisza 'E'
-    if key == keyboard.KeyCode.from_char('e') and keyboard_controller.ctrl_pressed:
+    # Włącz/wyłącz trzymanie klawisza 'E' przy użyciu klawisza 'R'
+    if key == keyboard.KeyCode.from_char('r'):  # Zmiana z 'e' na 'r'
         if holding_e:
             holding_e = False
         else:
@@ -54,6 +54,7 @@ def on_press(key):
         else:
             clicking_qe = True
             threading.Thread(target=click_qe, daemon=True).start()
+
 
 # Listener klawiszy
 with keyboard.Listener(on_press=on_press) as listener:
