@@ -13,12 +13,12 @@ O tym czy dana opcja jest włączona (ON) czy wyłączona (OFF) informuje w swoi
 """
 
 from pynput import keyboard
-from pynput.mouse import Controller as MouseController
+from pynput.mouse import Button, Controller as MouseController
 from pynput.keyboard import Key, Controller as KeyboardController
 import threading
 import time
 
-# KeySimulator for toggling 'W' and 'Space'
+# KeySimulator dla przełączania 'W' i 'Space'
 class KeySimulator:
     def __init__(self):
         self.w_pressed = False
@@ -45,7 +45,7 @@ class KeySimulator:
             self.space_pressed = False
             print("Space: OFF")
 
-# MouseActionSimulator for mouse actions
+# MouseActionSimulator dla akcji myszy
 class MouseActionSimulator:
     def __init__(self):
         self.mouse_controller = MouseController()
@@ -56,19 +56,19 @@ class MouseActionSimulator:
     def toggle_hold_lmb(self):
         self.holding_lmb = not self.holding_lmb
         if self.holding_lmb:
-            self.mouse_controller.press(MouseController.left)
+            self.mouse_controller.press(Button.left)
             print("LMB Hold: ON")
         else:
-            self.mouse_controller.release(MouseController.left)
+            self.mouse_controller.release(Button.left)
             print("LMB Hold: OFF")
 
     def toggle_hold_rmb(self):
         self.holding_rmb = not self.holding_rmb
         if self.holding_rmb:
-            self.mouse_controller.press(MouseController.right)
+            self.mouse_controller.press(Button.right)
             print("RMB Hold: ON")
         else:
-            self.mouse_controller.release(MouseController.right)
+            self.mouse_controller.release(Button.right)
             print("RMB Hold: OFF")
 
     def toggle_click_lmb(self, clicks_per_second=1500):
@@ -77,15 +77,16 @@ class MouseActionSimulator:
             threading.Thread(target=self.click_lmb, args=(clicks_per_second,), daemon=True).start()
         else:
             self.clicking = False
+            print("LMB Click: OFF")
 
     def click_lmb(self, clicks_per_second):
         interval = 1.0 / clicks_per_second
         while self.clicking:
-            self.mouse_controller.click(MouseController.left)
+            self.mouse_controller.click(Button.left)
             time.sleep(interval)
         print("LMB Click: OFF")
 
-# ScrollSimulator for scrolling functionality
+# ScrollSimulator dla funkcji przewijania
 class ScrollSimulator:
     def __init__(self):
         self.scrolling = False
@@ -100,11 +101,11 @@ class ScrollSimulator:
 
     def scroll_down(self):
         while self.scrolling:
-            self.mouse_controller.scroll(0, -1)  # Scroll down
+            self.mouse_controller.scroll(0, -1)  # Przewijanie w dół
             time.sleep(0.1)
         print("Scroll: OFF")
 
-# KeySequenceSimulator for simulating a sequence of key presses
+# KeySequenceSimulator dla symulacji sekwencji klawiszy
 class KeySequenceSimulator:
     def __init__(self):
         self.active = False
@@ -123,7 +124,7 @@ class KeySequenceSimulator:
             for key in keys:
                 time.sleep(0.1)
                 self.keyboard_controller.press(key)
-                time.sleep(1)  # Hold each key for 1 second
+                time.sleep(1)  # Przytrzymanie każdego klawisza przez 1 sekundę
                 self.keyboard_controller.release(key)
         print("Key Sequence: OFF")
 
@@ -133,29 +134,32 @@ scroll_simulator = ScrollSimulator()
 key_sequence_simulator = KeySequenceSimulator()
 
 def on_press(key):
-    # Toggling 'W' and 'Space'
+    # Przełączanie 'W' i 'Space'
     if key == keyboard.KeyCode.from_char('z'):
         key_simulator.toggle_w()
     elif key == keyboard.KeyCode.from_char('v'):
         key_simulator.toggle_space()
 
-    # Mouse actions
-    elif hasattr(key, 'char') and key.char in ['x', 'f', 'c']:
+    # Akcje myszy
+    elif hasattr(key, 'char') and key.char in ['x', 'f']:
         if key.char == 'x':
             mouse_action_simulator.toggle_hold_lmb()
         elif key.char == 'f':
             mouse_action_simulator.toggle_click_lmb()
-        elif key.char == 'c':
-            mouse_action_simulator.toggle_hold_rmb()
 
-    # Scrolling
+    # Przewijanie
     elif key == keyboard.Key.f8:
         scroll_simulator.toggle_scroll()
 
-    # Key sequence simulation
+    # Symulacja sekwencji klawiszy
     elif key == keyboard.KeyCode.from_char('g'):
         key_sequence_simulator.toggle_simulation()
 
-# Listener for key presses
+    # Zamykanie skryptu
+    elif hasattr(key, 'char') and key.char == 'c':
+        print("Zamykanie skryptu...")
+        return False
+
+# Nasłuchiwacz naciśnięć klawiszy
 with keyboard.Listener(on_press=on_press) as listener:
     listener.join()
