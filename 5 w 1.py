@@ -8,6 +8,8 @@ G - chodzi w kółko (musi być widok od góry)
 [ - klika szybko Q i E
 R - trzyma E
 
+O tym czy dana opcja jest włączona (ON) czy wyłączona (OFF) informuje w swoim okienku
+
 """
 
 from pynput import keyboard
