@@ -145,11 +145,6 @@ class ScrollSimulator:
             time.sleep(0.1)
 
 # 03up - Scroll up (przybliżanie ekranu)
-class ScrollSimulator:
-    def __init__(self):
-        self.scrolling = False
-        self.mouse_controller = MouseController()
-        self.scroll_thread = None
 
     def toggle_scroll_up(self):
         self.scrolling = not self.scrolling
@@ -223,9 +218,9 @@ class KeyboardActions:
     def hold_e(self):
         while self.holding_e:
             self.keyboard_controller.press('e')
-            time.sleep(0.01)
+            #time.sleep(0.01)
             self.keyboard_controller.release('e')
-            time.sleep(0.01)
+            #time.sleep(0.01)
 
     # 05b - Spamowanie Q+E
 
