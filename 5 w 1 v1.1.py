@@ -215,12 +215,22 @@ class KeyboardActions:
             self.hold_e_thread.start()
             print("\nTrzymanie E: ON \n(aby wyłączyć naciśnij 'R')")
 
+# To jest trzymanie klawisza 'E' wciśniętego
     def hold_e(self):
+        self.keyboard_controller.press('e')  # Naciśnij 'e' na początku
         while self.holding_e:
-            self.keyboard_controller.press('e')
-            time.sleep(0.01)
-            self.keyboard_controller.release('e')
-            time.sleep(0.01)
+            time.sleep(0.1)  # Utrzymuj pętlę, ale bez ciągłego naciskania 'e'
+        self.keyboard_controller.release('e')  # Puść 'e', gdy self.holding_e będzie False
+
+
+# To było spamowanie klawiszem 'E', a nie trzymanie go.
+#    def hold_e(self):
+#        while self.holding_e:
+#            self.keyboard_controller.press('e')
+#            time.sleep(0.01)
+#            self.keyboard_controller.release('e')
+#            time.sleep(0.01)
+
 
     # 05b - Spamowanie Q+E
 
