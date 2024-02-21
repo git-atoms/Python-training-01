@@ -1,0 +1,267 @@
+"""
+Z - chodzi
+C - trzyma RMB
+X - trzyma LMB
+F - klika szybko LMB
+F8 - scroll down (odsuwa ekran)ww
+G - chodzi w kółko (musi być widok od góry)
+[ - klika szybko Q i E
+R - trzyma E
+V - skacze (spacja)
+
+O tym czy dana opcja jest włączona (ON) czy wyłączona (OFF) informuje w swoim okienku
+
+
+from pynput import keyboard
+from pynput.mouse import Button, Controller as MouseController
+from pynput.keyboard import Key, Controller as KeyboardController
+import threading
+import time
+
+"""
+
+
+# Inicjalizacja kontrolerów
+keyboard_controller = KeyboardController()
+mouse_controller = MouseController()
+
+# Stany aktywności dla różnych funkcji
+holding_e = False
+clicking_qe = False
+walking = False
+holding_rmb = False
+holding_lmb = False
+clicking_lmb = False
+scrolling = False
+walking_circle = False
+
+# Definicje funkcji dla różnych działań
+def hold_e_action():
+    global holding_e
+    while holding_e:
+        keyboard_controller.press('e')
+        time.sleep(0.01)
+    keyboard_controller.release('e')
+
+def click_qe_action():
+    global clicking_qe
+    while clicking_qe:
+        keyboard_controller.press('q')
+        keyboard_controller.release('q')
+        keyboard_controller.press('e')
+        keyboard_controller.release('e')
+        time.sleep(0.01)
+
+def walk_action():
+    global walking
+    while walking:
+        keyboard_controller.press('w')
+        time.sleep(0.1)
+        keyboard_controller.release('w')
+        time.sleep(0.1)
+
+def hold_rmb_action():
+    global holding_rmb
+    while holding_rmb:
+        mouse_controller.press(Button.right)
+        time.sleep(0.1)
+    mouse_controller.release(Button.right)
+
+def hold_lmb_action():
+    global holding_lmb
+    while holding_lmb:
+        mouse_controller.press(Button.left)
+        time.sleep(0.1)
+    mouse_controller.release(Button.left)
+
+def click_lmb_action():
+    global clicking_lmb
+    while clicking_lmb:
+        mouse_controller.click(Button.left)
+        time.sleep(0.1)
+
+def scroll_action():
+    global scrolling
+    while scrolling:
+        mouse_controller.scroll(0, -2)
+        time.sleep(0.1)
+
+def walk_circle_action():
+    global walking_circle
+    while walking_circle:
+        for key in ['w', 'd', 's', 'a']:
+            keyboard_controller.press(key)
+            time.sleep(1)
+            keyboard_controller.release(key)
+
+# Funkcja obsługująca naciśnięcia klawiszy
+def on_press(key):
+    global holding_e, clicking_qe, walking, holding_rmb, holding_lmb, clicking_lmb, scrolling, walking_circle
+
+    try:
+        if key.char == 'r':
+            holding_e = not holding_e
+            if holding_e:
+                threading.Thread(target=hold_e_action, daemon=True).start()
+            else:
+                threading.Thread(target=hold_e_action, daemon=True).join()
+
+        elif key.char == '[':
+            clicking_qe = not clicking_qe
+            if clicking_qe:
+                threading.Thread(target=click_qe_action, daemon=True).start()
+            else:
+                threading.Thread(target=click_qe_action, daemon=True).join()
+
+        elif key.char == 'z':
+            walking = not walking
+            if walking:
+                threading.Thread(target=walk_action, daemon=True).start()
+            else:
+                threading.Thread(target=walk_action, daemon=True).join()
+
+        elif key.char == 'c':
+            holding_rmb = not holding_rmb
+            if holding_rmb:
+                threading.Thread(target=hold_rmb_action, daemon=True).start()
+            else:
+                threading.Thread(target=hold_rmb_action, daemon=True).join()
+
+        elif key.char == 'x':
+            holding_lmb = not holding_lmb
+            if holding_lmb:
+                threading.Thread(target=hold_lmb_action, daemon=True).start()
+            else:
+                threading.Thread(target=hold_lmb_action, daemon=True).join()
+
+        elif key.char == 'f':
+            clicking_lmb = not clicking_lmb
+            if clicking_lmb:
+                threading.Thread(target=click_lmb_action, daemon=True).start()
+            else:
+                threading.Thread(target=click_lmb_action, daemon=True).join()
+
+    except AttributeError:
+        if key == keyboard.Key.f8:
+            scrolling = not scrolling
+            if scrolling:
+                threading.Thread(target=scroll_action, daemon=True).start()
+            else:
+                threading.Thread(target=scroll_action, daemon=True).join()
+
+        elif key == keyboard.KeyCode.from_char('g'):
+            walking_circle
+
+
+# Inicjalizacja kontrolerów i zmiennych stanu
+keyboard_controller = KeyboardController()
+mouse_controller = MouseController()
+holding_e = False
+clicking_qe = False
+walking = False
+holding_rmb = False
+holding_lmb = False
+clicking_lmb = False
+scrolling = False
+walking_circle = False
+
+# Definicje funkcji dla różnych akcji
+def hold_e_action():
+    global holding_e
+    while holding_e:
+        keyboard_controller.press('e')
+        time.sleep(0.01)
+    keyboard_controller.release('e')
+
+def click_qe_action():
+    global clicking_qe
+    while clicking_qe:
+        keyboard_controller.press('q')
+        keyboard_controller.release('q')
+        keyboard_controller.press('e')
+        keyboard_controller.release('e')
+        time.sleep(0.01)
+
+def walk_action():
+    global walking
+    while walking:
+        keyboard_controller.press('w')
+        time.sleep(0.1)
+        keyboard_controller.release('w')
+        time.sleep(0.1)
+
+def hold_rmb_action():
+    global holding_rmb
+    while holding_rmb:
+        mouse_controller.press(Button.right)
+        time.sleep(0.1)
+    mouse_controller.release(Button.right)
+
+def hold_lmb_action():
+    global holding_lmb
+    while holding_lmb:
+        mouse_controller.press(Button.left)
+        time.sleep(0.1)
+    mouse_controller.release(Button.left)
+
+def click_lmb_action():
+    global clicking_lmb
+    while clicking_lmb:
+        mouse_controller.click(Button.left)
+        time.sleep(0.1)
+
+def scroll_action():
+    global scrolling
+    while scrolling:
+        mouse_controller.scroll(0, -2)
+        time.sleep(0.1)
+
+def walk_circle_action():
+    global walking_circle
+    while walking_circle:
+        for key in ['w', 'd', 's', 'a']:
+            keyboard_controller.press(key)
+            time.sleep(1)
+            keyboard_controller.release(key)
+
+# Funkcja obsługująca naciśnięcia klawiszy
+def on_press(key):
+    global holding_e, clicking_qe, walking, holding_rmb, holding_lmb, clicking_lmb, scrolling, walking_circle
+
+    try:
+        if key.char == 'r':
+            holding_e = not holding_e
+            threading.Thread(target=hold_e_action, daemon=True).start() if holding_e else None
+
+        elif key.char == '[':
+            clicking_qe = not clicking_qe
+            threading.Thread(target=click_qe_action, daemon=True).start() if clicking_qe else None
+
+        elif key.char == 'z':
+            walking = not walking
+            threading.Thread(target=walk_action, daemon=True).start() if walking else None
+
+        elif key.char == 'c':
+            holding_rmb = not holding_rmb
+            threading.Thread(target=hold_rmb_action, daemon=True).start() if holding_rmb else None
+
+        elif key.char == 'x':
+            holding_lmb = not holding_lmb
+            threading.Thread(target=hold_lmb_action, daemon=True).start() if holding_lmb else None
+
+        elif key.char == 'f':
+            clicking_lmb = not clicking_lmb
+            threading.Thread(target=click_lmb_action, daemon=True).start() if clicking_lmb else None
+
+    except AttributeError:
+        if key == keyboard.Key.f8:
+            scrolling = not scrolling
+            threading.Thread(target=scroll_action, daemon=True).start() if scrolling else None
+
+        elif key == keyboard.KeyCode.from_char('g'):
+            walking_circle = not walking_circle
+            threading.Thread(target=walk_circle_action, daemon=True).start() if walking_circle else None
+
+# Uruchomienie nasłuchiwania naciśnięć klawiszy
+with keyboard.Listener(on_press=on_press) as listener:
+    listener.join()
