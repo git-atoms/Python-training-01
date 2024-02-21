@@ -23,7 +23,6 @@ import threading
 import time
 
 
-
 # 01 - Trzymanie 'W' i spacji (ruch do przodu i skakanie)
 class KeySimulator:
     def __init__(self):
@@ -52,7 +51,6 @@ class KeySimulator:
             self.keyboard_controller.release(Key.space)
             self.space_pressed = False
             print("Spacja: OFF")
-
 
 
 # 02 - Akcje przycisków myszy
@@ -125,7 +123,6 @@ class MouseActionSimulator:
             time.sleep(interval)
 
 
-
 # 03 - Scroll down (oddalanie ekranu)
 class ScrollSimulator:
     def __init__(self):
@@ -140,11 +137,11 @@ class ScrollSimulator:
             print("\nOddalenie ekranu: ON \n(aby wyłączyć naciśnij 'F8')")
         else:
             print("Oddalenie ekranu: OFF")
+
     def scroll_down(self):
         while self.scrolling:
             self.mouse_controller.scroll(0, -1)  # Scroll down
             time.sleep(0.1)
-
 
 
 # 04 - Sekwencja chodzenia
@@ -166,7 +163,6 @@ class KeySequenceSimulator:
             self.active = False
             if self.thread and self.thread.is_alive():
                 self.thread.join()
-
 
     def simulate_key_sequence(self):
         keys = ['w', 's', 'a', 'd']
@@ -240,6 +236,7 @@ scroll_simulator = ScrollSimulator()
 key_sequence_simulator = KeySequenceSimulator()
 keyboard_actions = KeyboardActions()
 
+
 def on_press(key):
 
     # Trzymanie W i spacji
@@ -272,8 +269,6 @@ def on_press(key):
     # Spamowanie Q+E
     elif key == keyboard.KeyCode.from_char('['):
         keyboard_actions.toggle_click_qe()
-
-
 
 
 # Listener for key presses
