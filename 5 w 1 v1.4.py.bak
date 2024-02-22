@@ -61,47 +61,43 @@ class MouseActionSimulator:
         self.mouse_controller = MouseController()
         self.hold_lmb_thread = None
         self.hold_rmb_thread = None
-        self.click_thread = None
         self.holding_lmb = False
         self.holding_rmb = False
-        self.clicking = False
 
 # 02a - Trzymanie LMB
     def toggle_hold_lmb(self):
+        self.holding_lmb = not self.holding_lmb
         if self.holding_lmb:
-            self.holding_lmb = False
-            if self.hold_lmb_thread and self.hold_lmb_thread.is_alive():
-                self.hold_lmb_thread.join()
-            print("LMB Hold: OFF")
-        else:
-            self.holding_lmb = True
             self.hold_lmb_thread = threading.Thread(target=self.hold_lmb, daemon=True)
             self.hold_lmb_thread.start()
             print("\nLMB Hold: ON \n(aby wyłączyć naciśnij 'X')")
+        else:
+            if self.hold_lmb_thread and self.hold_lmb_thread.is_alive():
+                self.hold_lmb_thread.join()
+            print("LMB Hold: OFF")
 
     def hold_lmb(self):
-        self.mouse_controller.press(Button.left)
         while self.holding_lmb:
-            time.sleep(0.01)
+            self.mouse_controller.press(Button.left)
+            time.sleep(0.1)
         self.mouse_controller.release(Button.left)
 
 # 02b - Trzymanie RMB
     def toggle_hold_rmb(self):
+        self.holding_rmb = not self.holding_rmb
         if self.holding_rmb:
-            self.holding_rmb = False
-            if self.hold_rmb_thread and self.hold_rmb_thread.is_alive():
-                self.hold_rmb_thread.join()
-            print("RMB Hold: OFF")
-        else:
-            self.holding_rmb = True
             self.hold_rmb_thread = threading.Thread(target=self.hold_rmb, daemon=True)
             self.hold_rmb_thread.start()
             print("\nRMB Hold: ON \n(aby wyłączyć naciśnij 'C')")
+        else:
+            if self.hold_rmb_thread and self.hold_rmb_thread.is_alive():
+                self.hold_rmb_thread.join()
+            print("RMB Hold: OFF")
 
     def hold_rmb(self):
-        self.mouse_controller.press(Button.right)
         while self.holding_rmb:
-            time.sleep(0.01)
+            self.mouse_controller.press(Button.right)
+            time.sleep(0.1)
         self.mouse_controller.release(Button.right)
 
 # 02c - Klikanie 1500 kliknięć na sekundę
