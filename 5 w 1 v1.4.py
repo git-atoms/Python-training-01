@@ -63,6 +63,8 @@ class MouseActionSimulator:
         self.hold_rmb_thread = None
         self.holding_lmb = False
         self.holding_rmb = False
+        self.click_thread = None
+        self.clicking = False
 
 # 02a - Trzymanie LMB
     def toggle_hold_lmb(self):
