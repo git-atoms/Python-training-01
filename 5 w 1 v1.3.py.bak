@@ -118,7 +118,7 @@ class MouseActionSimulator:
             print("\nLMB Click fast: ON \n(aby wyłączyć naciśnij 'F')")
 
     def click_lmb(self):
-        clicks_per_second = 1500
+        clicks_per_second = 100  # było 1500
         interval = 1.0 / clicks_per_second
         while self.clicking:
             self.mouse_controller.click(Button.left)
@@ -223,7 +223,6 @@ class KeyboardActions:
             time.sleep(0.1)  # Utrzymuj pętlę, ale bez ciągłego naciskania 'e'
         self.keyboard_controller.release('e')  # Puść 'e', gdy self.holding_e będzie False
 
-
 # 05b - Trzymanie E przez 3 sekundy (loop)
     def toggle_hold_e_loop(self):
         if self.holding_e:
@@ -239,15 +238,15 @@ class KeyboardActions:
 
 # Trzymanie klawisza 'E' wciśniętego przez 3 sekundy (loop)
     def hold_e_loop(self):
-        self.keyboard_controller.press('e')  # Naciśnij 'e' na początku
-    while self.holding_e:
-        time.sleep(0.1)  # Utrzymuj pętlę, ale bez ciągłego naciskania 'e'
-    self.keyboard_controller.release('e')  # Puść 'e', gdy self.holding_e będzie False
-
-
+        while self.holding_e:
+            self.keyboard_controller.press('e')  # Naciśnij 'e'
+            time.sleep(3)  # Trzymaj 'e' przez 3 sekundy
+            self.keyboard_controller.release('e')  # Puść 'e'
+            if not self.holding_e:  # Sprawdź, czy pętla powinna zostać zatrzymana
+                break
+            time.sleep(0.1)  # Krótka przerwa przed ponownym naciśnięciem 'e'
 
 # 05c - Spamowanie Q+E
-
     def toggle_click_qe(self):
         if self.clicking_qe:
             self.clicking_qe = False
@@ -311,7 +310,7 @@ def on_press(key):
         keyboard_actions.toggle_hold_e()
     
     # Trzymanie E przez 3 sekundy (loop)
-    elif key == keyboard.KeyCode.from_char('T'):
+    elif key == keyboard.KeyCode.from_char('t'):
         keyboard_actions.toggle_hold_e_loop()
 
     # Spamowanie Q+E
