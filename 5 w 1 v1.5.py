@@ -117,8 +117,8 @@ class MouseActionSimulator:
             print("\nLMB Click fast: ON \n(aby wyłączyć naciśnij 'F')")
 
     def click_lmb(self):
-        clicks_per_second = 1500
-        interval = 1.0 / clicks_per_second
+        clicks_per_second = 1500 # ilość kliknięć na sekundę
+        interval = 1.0 / clicks_per_second # interwał (tym trzeba spróbować regulować)
         while self.clicking:
             self.mouse_controller.click(Button.left)
             time.sleep(interval)
