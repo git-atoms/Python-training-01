@@ -86,16 +86,20 @@ class MouseActionSimulator:
 
 # 02b - Trzymanie RMB
     def toggle_hold_rmb(self):
-        self.holding_rmb = not self.holding_rmb
         if self.holding_rmb:
-            threading.Thread(target=self.hold_rmb, daemon=True).start()
-            print("\nRMB Hold: ON \n(aby wyłączyć naciśnij 'C')")
-        else:
+            self.holding_rmb = False
+            if self.hold_rmb_thread and self.hold_rmb_thread.is_alive():
+                self.hold_rmb_thread.join()
             print("RMB Hold: OFF")
+        else:
+            self.holding_rmb = True
+            self.hold_rmb_thread = threading.Thread(target=self.hold_rmb, daemon=True)
+            self.hold_rmb_thread.start()
+            print("\nRMB Hold: ON \n(aby wyłączyć naciśnij 'C')")
 
     def hold_rmb(self):
+        self.mouse_controller.press(Button.right)
         while self.holding_rmb:
-            self.mouse_controller.press(Button.right)
             time.sleep(0.01)
         self.mouse_controller.release(Button.right)
 
@@ -316,6 +320,3 @@ def on_press(key):
 # Listener for key presses
 with keyboard.Listener(on_press=on_press) as listener:
     listener.join()
-listener = keyboard.Listener(on_press=mouse_action_simulator.on_press)
-listener.start()
-listener.join()
