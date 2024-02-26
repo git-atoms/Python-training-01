@@ -2,10 +2,11 @@
 Z - chodzi
 C - trzyma RMB
 X - trzyma LMB
-F - klika szybko LMB (1500 klinięć na sekundę)
+F - klika 5 LMB (5 klinięć na sekundę)
+G - klika 1500 LMB (1500 klinięć na sekundę)
 F7 - scroll up (przybliża ekran)
 F8 - scroll down (odsuwa ekran)
-G - chodzi w kółko (widok powinien być od góry inaczej będzie chodził po większym promieniu)
+H - chodzi w kółko (widok powinien być od góry inaczej będzie chodził po większym promieniu)
 [ - klika szybko Q i E
 R - trzyma E
 T - trzyma E przez 3 sekundy, puszcza i znowu trzyma przez 3 sekundy (loop)
@@ -104,21 +105,41 @@ class MouseActionSimulator:
         self.mouse_controller.release(Button.right)
 
 # 02c - Klikanie 1500 kliknięć na sekundę
-    def toggle_click_lmb(self):
+    def toggle_click_lmb_1500(self):
         if self.clicking:
             self.clicking = False
             if self.click_thread and self.click_thread.is_alive():
                 self.click_thread.join()
-            print("LMB Click fast: OFF")
+            print("LMB Click 1500: OFF")
         else:
             self.clicking = True
-            self.click_thread = threading.Thread(target=self.click_lmb, daemon=True)
+            self.click_thread = threading.Thread(target=self.click_lmb_1500, daemon=True)
             self.click_thread.start()
-            print("\nLMB Click fast: ON \n(aby wyłączyć naciśnij 'F')")
+            print("\nLMB Click 1500: ON \n(aby wyłączyć naciśnij 'G')")
 
-    def click_lmb(self):
-        clicks_per_second = 5 # ilość kliknięć na sekundę
-        interval = 0.1 / clicks_per_second # interwał 1.0 (tym trzeba spróbować regulować)
+    def click_lmb_1500(self):
+        clicks_per_second = 1500  # 1500 ilość kliknięć na sekundę
+        interval = 1.0 / clicks_per_second  # interwał 1.0 (tym trzeba spróbować regulować)
+        while self.clicking:
+            self.mouse_controller.click(Button.left)
+            time.sleep(interval)
+
+# 02d - Klikanie 5 kliknięć na sekundę
+    def toggle_click_lmb_5(self):
+        if self.clicking:
+            self.clicking = False
+            if self.click_thread and self.click_thread.is_alive():
+                self.click_thread.join()
+            print("LMB Click 5: OFF")
+        else:
+            self.clicking = True
+            self.click_thread = threading.Thread(target=self.click_lmb_5, daemon=True)
+            self.click_thread.start()
+            print("\nLMB Click 5: ON \n(aby wyłączyć naciśnij 'F')")
+
+    def click_lmb_5(self):
+        clicks_per_second = 5
+        interval = 0.1 / clicks_per_second
         while self.clicking:
             self.mouse_controller.click(Button.left)
             time.sleep(interval)
@@ -173,7 +194,7 @@ class KeySequenceSimulator:
             if self.thread is None or not self.thread.is_alive():
                 self.thread = threading.Thread(target=self.simulate_key_sequence)
                 self.thread.start()
-                print("\nChodzenie dookoła: ON \n(aby wyłączyć naciśnij 'G')")
+                print("\nChodzenie dookoła: ON \n(aby wyłączyć naciśnij 'H')")
         else:
             print("\nChodzenie dookoła: OFF \n(zaraz przestanie chodzić)")
             self.active = False
@@ -277,42 +298,44 @@ keyboard_actions = KeyboardActions()
 
 def on_press(key):
 
-    # Trzymanie W i spacji
+    # 01. Trzymanie W i spacji
     if key == keyboard.KeyCode.from_char('z'):
         key_simulator.toggle_w()
     elif key == keyboard.KeyCode.from_char('v'):
         key_simulator.toggle_space()
 
-    # Akcje klawiszami myszy
-    elif hasattr(key, 'char') and key.char in ['x', 'f', 'c']:
+    # 02. Akcje klawiszami myszy
+    elif hasattr(key, 'char') and key.char in ['x', 'f', 'g', 'c']:
         if key.char == 'x':
             mouse_action_simulator.toggle_hold_lmb()
         elif key.char == 'f':
-            mouse_action_simulator.toggle_click_lmb()
+            mouse_action_simulator.toggle_click_lmb_5()
+        elif key.char == 'g':
+            mouse_action_simulator.toggle_click_lmb_1500()
         elif key.char == 'c':
             mouse_action_simulator.toggle_hold_rmb()
 
-    # Scroll down F8
+    # 03down. Scroll down F8
     elif key == keyboard.Key.f8:
         scroll_simulator.toggle_scroll_down()
     
-    # Scroll down F7
+    # 03up. Scroll down F7
     elif key == keyboard.Key.f7:
         scroll_simulator.toggle_scroll_up()
 
-    # Chodzenie
-    elif key == keyboard.KeyCode.from_char('g'):
+    # 04. Chodzenie
+    elif key == keyboard.KeyCode.from_char('h'):
         key_sequence_simulator.toggle_simulation()
 
-    # Trzymanie E
+    # 05a. Trzymanie E
     elif key == keyboard.KeyCode.from_char('r'):
         keyboard_actions.toggle_hold_e()
     
-    # Trzymanie E przez 3 sekundy (loop)
+    # 05b. Trzymanie E przez 3 sekundy (loop)
     elif key == keyboard.KeyCode.from_char('t'):
         keyboard_actions.toggle_hold_e_loop()
 
-    # Spamowanie Q+E
+    # 05c. Spamowanie Q+E
     elif key == keyboard.KeyCode.from_char('['):
         keyboard_actions.toggle_click_qe()
 
