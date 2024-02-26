@@ -12,7 +12,10 @@ R - trzyma E
 T - trzyma E przez 3 sekundy, puszcza i znowu trzyma przez 3 sekundy (loop)
 V - skacze (spacja)
 
-O tym czy dana opcja jest włączona (ON) czy wyłączona (OFF) informuje w swoim okienku
+O tym czy dana opcja jest włączona (ON) czy wyłączona (OFF) informuje w swoim okienku,
+które najlepiej w tym celu, mieć na ekranie obok.
+
+Przypomina też który przycisk trzeba wcisnąć ponownie aby wyłączyć dane działanie.
 
 
 """
