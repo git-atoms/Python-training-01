@@ -2,16 +2,19 @@
 Z - chodzi
 C - trzyma RMB
 X - trzyma LMB
-F - klika szybko LMB (1500 klinięć na sekundę)
+F - klika 1500 LMB (1500 klinięć na sekundę)
 F7 - scroll up (przybliża ekran)
 F8 - scroll down (odsuwa ekran)
-G - chodzi w kółko (widok powinien być od góry inaczej będzie chodził po większym promieniu)
+H - chodzi w kółko (widok powinien być od góry inaczej będzie chodził po większym promieniu)
 [ - klika szybko Q i E
 R - trzyma E
 T - trzyma E przez 3 sekundy, puszcza i znowu trzyma przez 3 sekundy (loop)
 V - skacze (spacja)
 
-O tym czy dana opcja jest włączona (ON) czy wyłączona (OFF) informuje w swoim okienku
+O tym czy dana opcja jest włączona (ON) czy wyłączona (OFF) informuje w swoim okienku,
+które najlepiej w tym celu, mieć na ekranie obok.
+
+Przypomina też który przycisk trzeba wcisnąć ponownie aby wyłączyć dane działanie.
 
 
 """
