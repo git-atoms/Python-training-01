@@ -1,3 +1,6 @@
+import warnings
+warnings.filterwarnings("ignore", category=UserWarning, module="openpyxl")
+
 import os
 import openpyxl
 import platform
